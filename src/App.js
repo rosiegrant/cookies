@@ -65,14 +65,14 @@ class Card extends React.Component {
       return (
         card.options.map((option) => {
           if (option.isChecked) {
-            return <li key={option.value}>{option.value}</li>
+            return <li class="list-group-item" key={option.value}>{option.value}</li>
           }
         }
         )
       )
     })
     return (
-      <ul>{ingredients}</ul>
+      <ul class="list-group list-group flush">{ingredients}</ul>
        
           
               
@@ -117,27 +117,22 @@ class Card extends React.Component {
     const currentCardDataOptions = currentCardData.options;
     if (this.state.lastCard) {
       return (
-      <div class="row justify-content-sm-center">
-        <div class="col-3"></div>
-        <div class="col-3"> 
+      <div class="row justify-content-center">
+        <div class="col-sm-6"> 
           <div class="card text-center survey-card">
-              <div class="card-title">
+              <div class="card-header">
                 THE END you did it
               </div>
-              <div class="card-body"> 
               <this.createRecipe />
-              </div>
           </div>
-        </div>
-        <div class="col-3">
         </div>
       </div>
       )
     }
     return (
-      <div class="row justify-content-sm-center">
-        <div class="col-3"></div>
-        <div class="col-3"> 
+      <div>
+      <div class="row justify-content-center">
+        <div class="col-sm-6"> 
           <div class="card text-center survey-card">
               <div class="card-title">
                 {currentCardData.title}
@@ -151,9 +146,10 @@ class Card extends React.Component {
               </div>
           </div>
         </div>
-        <div class="col-3 next-button">
-        <NextButton onClick={this.handleNextClick}/>
-        </div>
+      </div>
+      <div class="row justify-content-center">
+      <NextButton onClick={this.handleNextClick}/>
+      </div>
       </div>
     )
   }
@@ -175,12 +171,12 @@ function App() {
   return (
 
     <div class="container">
-      <div class="row justify-content-sm-center">
-        <div class="col-4 title">
+      <div class="row justify-content-center">
+        <div class="col-title">
           BearBaking Cookie Guide
         </div>
       </div>
-      <div class="row justify-content-sm-center"><img class="logo" src={bear}/></div>
+      <div class="row justify-content-center"><img class="logo" src={bear}/></div>
 
       <Card />
     </div>
