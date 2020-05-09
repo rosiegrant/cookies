@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import bear from './bear.png'
 import './App.css';
 import  CheckBox  from './CheckBox.js';
 
@@ -150,7 +151,7 @@ class Card extends React.Component {
               </div>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-3 next-button">
         <NextButton onClick={this.handleNextClick}/>
         </div>
       </div>
@@ -179,6 +180,8 @@ function App() {
           BearBaking Cookie Guide
         </div>
       </div>
+      <div class="row justify-content-sm-center"><img class="logo" src={bear}/></div>
+
       <Card />
     </div>
     // <div className="App">
