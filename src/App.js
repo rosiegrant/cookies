@@ -268,7 +268,7 @@ class Card extends React.Component {
       <div class="row justify-content-center">
         <div class="col-sm-6"> 
           <div class="card text-center survey-card">
-              <div class="card-title">
+              <div class="card-header">
                 {currentCardData.title}
               </div>
               <div class="card-body"> 

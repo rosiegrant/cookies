@@ -31,6 +31,14 @@
   margin-top: 1rem;
 }
 
+.form-check {
+  margin-top: .5rem;
+}
+
+.card-body {
+  padding-top: 12px;
+}
+
 @media (min-width: 768px) {
   .next-button  {
     justify-content: center;
