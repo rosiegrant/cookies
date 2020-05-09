@@ -9,13 +9,14 @@ class Card extends React.Component {
     super(props);
     this.handleNextClick = this.handleNextClick.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
+    this.createRecipe = this.createRecipe.bind(this);
     this.state = {
       currentCard: 0,
       cardData: [
         {
           index: 0,
           title: "First, you pick the oats",
-          text: "description",
+          text: "Oats",
           options: [ 
             {
               value: "Regular Oats",
@@ -34,7 +35,7 @@ class Card extends React.Component {
         {
           index: 1,
           title: "Second, you pick the flour",
-          text: "another description",
+          text: "Flour",
           options: [ 
             {
               value: "Almond Flour",
@@ -54,6 +55,27 @@ class Card extends React.Component {
       lastCard: false
     }
 
+  }
+
+  createRecipe() {
+
+    const ingredients = this.state.cardData.map((card) => {
+      // console.log(card);
+      return (
+        card.options.map((option) => {
+          if (option.isChecked) {
+            return <li key={option.value}>{option.value}</li>
+          }
+        }
+        )
+      )
+    })
+    return (
+      <ul>{ingredients}</ul>
+       
+          
+              
+    )
   }
 
   handleNextClick(props) {
@@ -102,14 +124,7 @@ class Card extends React.Component {
                 THE END you did it
               </div>
               <div class="card-body"> 
-              YAY
-              
-              {/* {
-                this.state.cardData.map((card) => {
-                <div>{card.title}</div>
-                <div>{card.options}</div>
-                })
-              } */}
+              <this.createRecipe />
               </div>
           </div>
         </div>
